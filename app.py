@@ -55,6 +55,8 @@ class Course:
     
     instructor=property(get_instructor,set_instructor)
 
+    
+
 #courses
 course_titles=["math","english","social studies","science","computer","art"]
 courses=[]
@@ -83,9 +85,10 @@ for i in range(len(courses)):
     courses[i].set_instructor(instructors[randIdx])
 
 #students register for courses
-for i in range(len(students)):
-    randIdx=int(len(courses)*random())
-    students[i].register(courses[randIdx])
+for i in range(4):
+    randIdxCourses=int(len(courses)*random())
+    randIdxStudents=int(len(students)*random())
+    students[randIdxStudents].register(courses[randIdxCourses])
 
 for course in courses:
     print(course)
